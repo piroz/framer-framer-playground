@@ -335,7 +335,7 @@ export const html = `<!DOCTYPE html>
     </div>
 
     <footer>
-      Powered by <a href="https://github.com/piroz/framer-framer" target="_blank" rel="noopener">framer-framer</a> v2
+      Powered by <a href="https://github.com/piroz/framer-framer" target="_blank" rel="noopener">framer-framer</a> v3
     </footer>
   </div>
 
