@@ -1,0 +1,29 @@
+{
+  "name": "framer-framer-playground",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "framer-framer 動作確認サイト — YouTube, Twitter, TikTok, Vimeo, Spotify, SoundCloud, HuggingFace, Gradio",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build:node": "tsup",
+    "start:node": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.1",
+    "framer-framer": "^2.0.0",
+    "hono": "^4.12.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250309.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
