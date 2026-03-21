@@ -19,13 +19,20 @@ export const html = `<!DOCTYPE html>
 
       --c-youtube: #ff0000;
       --c-twitter: #1d9bf0;
+      --c-tiktok: #010101;
       --c-vimeo: #1ab7ea;
+      --c-niconico: #252525;
       --c-spotify: #1db954;
       --c-soundcloud: #ff5500;
       --c-huggingface: #ff9d00;
       --c-gradio: #f97316;
       --c-slideshare: #0077b5;
+      --c-speakerdeck: #009287;
       --c-pinterest: #bd081c;
+      --c-reddit: #ff4500;
+      --c-mastodon: #6364ff;
+      --c-bluesky: #0085ff;
+      --c-flickr: #f40083;
     }
 
     body {
@@ -115,13 +122,20 @@ export const html = `<!DOCTYPE html>
 
     .sample-btn[data-provider="youtube"]    { border-color: color-mix(in srgb, var(--c-youtube) 50%, transparent); color: var(--c-youtube); }
     .sample-btn[data-provider="twitter"]    { border-color: color-mix(in srgb, var(--c-twitter) 50%, transparent); color: var(--c-twitter); }
+    .sample-btn[data-provider="tiktok"]     { border-color: color-mix(in srgb, var(--c-tiktok) 50%, transparent); color: var(--c-tiktok); }
     .sample-btn[data-provider="vimeo"]      { border-color: color-mix(in srgb, var(--c-vimeo) 50%, transparent); color: var(--c-vimeo); }
+    .sample-btn[data-provider="niconico"]   { border-color: color-mix(in srgb, var(--c-niconico) 50%, transparent); color: var(--c-niconico); }
     .sample-btn[data-provider="spotify"]    { border-color: color-mix(in srgb, var(--c-spotify) 50%, transparent); color: var(--c-spotify); }
     .sample-btn[data-provider="soundcloud"] { border-color: color-mix(in srgb, var(--c-soundcloud) 50%, transparent); color: var(--c-soundcloud); }
     .sample-btn[data-provider="huggingface"]{ border-color: color-mix(in srgb, var(--c-huggingface) 50%, transparent); color: var(--c-huggingface); }
     .sample-btn[data-provider="gradio"]     { border-color: color-mix(in srgb, var(--c-gradio) 50%, transparent); color: var(--c-gradio); }
     .sample-btn[data-provider="slideshare"] { border-color: color-mix(in srgb, var(--c-slideshare) 50%, transparent); color: var(--c-slideshare); }
+    .sample-btn[data-provider="speakerdeck"]{ border-color: color-mix(in srgb, var(--c-speakerdeck) 50%, transparent); color: var(--c-speakerdeck); }
     .sample-btn[data-provider="pinterest"]  { border-color: color-mix(in srgb, var(--c-pinterest) 50%, transparent); color: var(--c-pinterest); }
+    .sample-btn[data-provider="reddit"]     { border-color: color-mix(in srgb, var(--c-reddit) 50%, transparent); color: var(--c-reddit); }
+    .sample-btn[data-provider="mastodon"]   { border-color: color-mix(in srgb, var(--c-mastodon) 50%, transparent); color: var(--c-mastodon); }
+    .sample-btn[data-provider="bluesky"]    { border-color: color-mix(in srgb, var(--c-bluesky) 50%, transparent); color: var(--c-bluesky); }
+    .sample-btn[data-provider="flickr"]     { border-color: color-mix(in srgb, var(--c-flickr) 50%, transparent); color: var(--c-flickr); }
 
     /* Divider */
     .divider {
@@ -277,8 +291,12 @@ export const html = `<!DOCTYPE html>
           data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">YouTube Video</button>
         <button class="sample-btn" data-provider="youtube"
           data-url="https://youtu.be/dQw4w9WgXcQ">YouTube (short URL)</button>
+        <button class="sample-btn" data-provider="tiktok"
+          data-url="https://www.tiktok.com/@scout2015/video/6718335390845095173">TikTok</button>
         <button class="sample-btn" data-provider="vimeo"
           data-url="https://vimeo.com/347119375">Vimeo</button>
+        <button class="sample-btn" data-provider="niconico"
+          data-url="https://www.nicovideo.jp/watch/sm9">niconico</button>
       </div>
     </div>
 
@@ -287,7 +305,13 @@ export const html = `<!DOCTYPE html>
       <h3>Social</h3>
       <div class="samples">
         <button class="sample-btn" data-provider="twitter"
-          data-url="https://twitter.com/jack/status/20">X/Twitter Post</button>
+          data-url="https://twitter.com/jack/status/20">X/Twitter</button>
+        <button class="sample-btn" data-provider="bluesky"
+          data-url="https://bsky.app/profile/bsky.app/post/3jt64wogqmc2y">Bluesky</button>
+        <button class="sample-btn" data-provider="mastodon"
+          data-url="https://mastodon.social/@Mastodon/109399976804498654">Mastodon</button>
+        <button class="sample-btn" data-provider="reddit"
+          data-url="https://www.reddit.com/r/aww/comments/1k2jq8o/my_cat_likes_to_sit_like_this/">Reddit</button>
         <button class="sample-btn" data-provider="pinterest"
           data-url="https://www.pinterest.com/pin/709246641349109266/">Pinterest</button>
       </div>
@@ -303,6 +327,17 @@ export const html = `<!DOCTYPE html>
           data-url="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M">Spotify Playlist</button>
         <button class="sample-btn" data-provider="spotify"
           data-url="https://open.spotify.com/album/1DFixLWuPkv3KT3TnV35m3">Spotify Album</button>
+        <button class="sample-btn" data-provider="soundcloud"
+          data-url="https://soundcloud.com/foraboreal/sets/departure-to-everyday-life">SoundCloud</button>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="provider-group">
+      <h3>Photo</h3>
+      <div class="samples">
+        <button class="sample-btn" data-provider="flickr"
+          data-url="https://www.flickr.com/photos/bfranka/51853916612/">Flickr</button>
       </div>
     </div>
 
@@ -312,6 +347,8 @@ export const html = `<!DOCTYPE html>
       <div class="samples">
         <button class="sample-btn" data-provider="slideshare"
           data-url="https://www.slideshare.net/dollykaushal3/upcoming-trends-in-digital-marketing-in-2024pptx">SlideShare</button>
+        <button class="sample-btn" data-provider="speakerdeck"
+          data-url="https://speakerdeck.com/github/how-github-uses-github-to-build-github">Speaker Deck</button>
       </div>
     </div>
 
@@ -462,10 +499,12 @@ export const html = `<!DOCTYPE html>
 
     function getProviderColor(name) {
       const colors = {
-        youtube: '#ff0000', twitter: '#1d9bf0',
-        vimeo: '#1ab7ea', spotify: '#1db954',
-        huggingface: '#ff9d00', gradio: '#f97316',
-        slideshare: '#0077b5', pinterest: '#bd081c'
+        youtube: '#ff0000', twitter: '#1d9bf0', tiktok: '#010101',
+        vimeo: '#1ab7ea', niconico: '#252525', spotify: '#1db954',
+        soundcloud: '#ff5500', huggingface: '#ff9d00', gradio: '#f97316',
+        slideshare: '#0077b5', speakerdeck: '#009287', pinterest: '#bd081c',
+        reddit: '#ff4500', mastodon: '#6364ff', bluesky: '#0085ff',
+        flickr: '#f40083'
       };
       return colors[name] || '#6366f1';
     }
