@@ -33,6 +33,7 @@ export const html = `<!DOCTYPE html>
       --c-mastodon: #6364ff;
       --c-bluesky: #0085ff;
       --c-flickr: #f40083;
+      --c-threads: #ffffff;
     }
 
     body {
@@ -136,6 +137,7 @@ export const html = `<!DOCTYPE html>
     .sample-btn[data-provider="mastodon"]   { border-color: color-mix(in srgb, var(--c-mastodon) 50%, transparent); color: var(--c-mastodon); }
     .sample-btn[data-provider="bluesky"]    { border-color: color-mix(in srgb, var(--c-bluesky) 50%, transparent); color: var(--c-bluesky); }
     .sample-btn[data-provider="flickr"]     { border-color: color-mix(in srgb, var(--c-flickr) 50%, transparent); color: var(--c-flickr); }
+    .sample-btn[data-provider="threads"]   { border-color: color-mix(in srgb, var(--c-threads) 50%, transparent); color: var(--c-threads); }
 
     /* Divider */
     .divider {
@@ -310,6 +312,8 @@ export const html = `<!DOCTYPE html>
           data-url="https://bsky.app/profile/bsky.app/post/3jt64wogqmc2y">Bluesky</button>
         <button class="sample-btn" data-provider="mastodon"
           data-url="https://mastodon.social/@Mastodon/109399976804498654">Mastodon</button>
+        <button class="sample-btn" data-provider="threads"
+          data-url="https://www.threads.net/@zuck/post/CuVGPmPSeZh">Threads</button>
         <button class="sample-btn" data-provider="reddit"
           data-url="https://www.reddit.com/r/aww/comments/1k2jq8o/my_cat_likes_to_sit_like_this/">Reddit</button>
         <button class="sample-btn" data-provider="pinterest"
@@ -504,7 +508,7 @@ export const html = `<!DOCTYPE html>
         soundcloud: '#ff5500', huggingface: '#ff9d00', gradio: '#f97316',
         slideshare: '#0077b5', speakerdeck: '#009287', pinterest: '#bd081c',
         reddit: '#ff4500', mastodon: '#6364ff', bluesky: '#0085ff',
-        flickr: '#f40083'
+        flickr: '#f40083', threads: '#ffffff'
       };
       return colors[name] || '#6366f1';
     }
