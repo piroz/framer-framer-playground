@@ -379,7 +379,7 @@ export const html = `<!DOCTYPE html>
         <button class="sample-btn" data-provider="mastodon"
           data-url="https://mastodon.social/@Mastodon/109399976804498654">Mastodon</button>
         <button class="sample-btn" data-provider="threads"
-          data-url="https://www.threads.net/@zuck/post/CuVGPmPSeZh">Threads</button>
+          data-url="https://www.threads.net/@zuck/post/CuVGPmPSeZh" title="Requires Meta access token">Threads *</button>
         <button class="sample-btn" data-provider="reddit"
           data-url="https://www.reddit.com/r/aww/comments/1k2jq8o/my_cat_likes_to_sit_like_this/">Reddit</button>
         <button class="sample-btn" data-provider="pinterest"
