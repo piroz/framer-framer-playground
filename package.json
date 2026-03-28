@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "framer-framer 動作確認サイト — YouTube, Twitter, TikTok, Vimeo, Niconico, Spotify, SoundCloud, Flickr, SlideShare, Speaker Deck, Pinterest, Reddit, Mastodon, Bluesky, Threads, HuggingFace, Gradio",
+  "description": "framer-framer 動作確認サイト — YouTube, Twitter, TikTok, Vimeo, Niconico, Spotify, SoundCloud, Flickr, SlideShare, Speaker Deck, Pinterest, Reddit, Mastodon, Bluesky, Threads, HuggingFace, Gradio, note",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.14.1",
-    "framer-framer": "^3.2.0",
+    "framer-framer": "^3.3.1",
     "hono": "^4.12.5"
   },
   "devDependencies": {
