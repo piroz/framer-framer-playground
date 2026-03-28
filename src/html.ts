@@ -205,6 +205,70 @@ export const html = `<!DOCTYPE html>
       border-radius: 8px;
     }
 
+    /* Blockquote embeds (Twitter, Reddit, etc.) */
+    .embed-card-body blockquote {
+      margin: 0;
+      padding: 1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--bg);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .embed-card-body blockquote a { color: var(--accent); }
+
+    /* Photo embeds (Flickr, etc.) */
+    .embed-card-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* OGP fallback card */
+    .embed-card-body .framer-framer-card {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .embed-card-body .framer-framer-card img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .embed-card-body .framer-framer-card .framer-framer-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      min-width: 0;
+    }
+    .embed-card-body .framer-framer-card a {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .embed-card-body .framer-framer-card a:hover { text-decoration: underline; }
+    .embed-card-body .framer-framer-card p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .embed-card-body .framer-framer-card span {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
     /* JSON toggle */
     .json-toggle {
       padding: 0.3rem 0.6rem;
@@ -315,7 +379,7 @@ export const html = `<!DOCTYPE html>
         <button class="sample-btn" data-provider="mastodon"
           data-url="https://mastodon.social/@Mastodon/109399976804498654">Mastodon</button>
         <button class="sample-btn" data-provider="threads"
-          data-url="https://www.threads.net/@zuck/post/CuVGPmPSeZh">Threads</button>
+          data-url="https://www.threads.net/@zuck/post/CuVGPmPSeZh" title="Requires Meta access token">Threads *</button>
         <button class="sample-btn" data-provider="reddit"
           data-url="https://www.reddit.com/r/aww/comments/1k2jq8o/my_cat_likes_to_sit_like_this/">Reddit</button>
         <button class="sample-btn" data-provider="pinterest"
@@ -387,7 +451,7 @@ export const html = `<!DOCTYPE html>
     </div>
 
     <footer>
-      Powered by <a href="https://github.com/piroz/framer-framer" target="_blank" rel="noopener">framer-framer</a> v3
+      Powered by <a href="https://github.com/piroz/framer-framer" target="_blank" rel="noopener">framer-framer</a> v3.3.1
     </footer>
   </div>
 
@@ -432,10 +496,10 @@ export const html = `<!DOCTYPE html>
       embedBtn.disabled = true;
 
       try {
-        const res = await fetch('/api/embed?url=' + encodeURIComponent(url));
+        const res = await fetch('/api/embed?url=' + encodeURIComponent(url) + '&sanitize=false');
         const data = await res.json();
 
-        if (!res.ok) throw new Error(data.error || 'Failed to resolve embed');
+        if (!res.ok) throw new Error(data.detail || data.title || 'Failed to resolve embed');
 
         const providerName = data.provider || 'unknown';
         const providerEl = card.querySelector('.provider');
@@ -455,9 +519,18 @@ export const html = `<!DOCTYPE html>
         closeBtn.onclick = () => card.remove();
         metaInfo.appendChild(closeBtn);
 
-        // Render embed HTML
+        // Render embed HTML (fallback to thumbnail for photo embeds)
         const body = card.querySelector('.embed-card-body');
-        body.innerHTML = data.html;
+        if (data.html) {
+          body.innerHTML = data.html;
+        } else if (data.type === 'photo' && (data.thumbnail_url || data.url)) {
+          const imgUrl = data.thumbnail_url || data.url;
+          body.innerHTML = '<a href="' + esc(data.url) + '" target="_blank" rel="noopener">' +
+            '<img src="' + esc(imgUrl) + '" alt="' + esc(data.title || '') + '" />' +
+            '</a>';
+        } else {
+          body.innerHTML = '<div class="error">No embed HTML returned</div>';
+        }
 
         // Make iframes responsive
         const iframe = body.querySelector('iframe');
@@ -468,7 +541,7 @@ export const html = `<!DOCTYPE html>
           iframe.style.border = 'none';
         }
 
-        // Handle Twitter/X blockquote scripts
+        // Re-execute scripts (required for blockquote-based embeds like Twitter, Reddit, Pinterest)
         const scripts = body.querySelectorAll('script');
         scripts.forEach(oldScript => {
           const newScript = document.createElement('script');

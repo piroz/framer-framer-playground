@@ -8,7 +8,9 @@ export function createMainApp(): Hono {
 
   app.use("/api/*", cors());
 
-  const embedApp = createApp();
+  const embedApp = createApp({
+    defaultOptions: { sanitize: false },
+  });
   app.route("/api", embedApp);
 
   app.get("/", (c) => c.html(html));
