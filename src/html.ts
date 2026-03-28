@@ -362,7 +362,7 @@ export const html = `<!DOCTYPE html>
         <button class="sample-btn" data-provider="tiktok"
           data-url="https://www.tiktok.com/@scout2015/video/6718335390845095173">TikTok</button>
         <button class="sample-btn" data-provider="vimeo"
-          data-url="https://vimeo.com/347119375">Vimeo</button>
+          data-url="https://vimeo.com/1084537">Vimeo</button>
         <button class="sample-btn" data-provider="niconico"
           data-url="https://www.nicovideo.jp/watch/sm9">niconico</button>
       </div>
@@ -375,15 +375,15 @@ export const html = `<!DOCTYPE html>
         <button class="sample-btn" data-provider="twitter"
           data-url="https://twitter.com/jack/status/20">X/Twitter</button>
         <button class="sample-btn" data-provider="bluesky"
-          data-url="https://bsky.app/profile/bsky.app/post/3jt64wogqmc2y">Bluesky</button>
+          data-url="https://bsky.app/profile/bsky.app/post/3mhgprzgahs2l">Bluesky</button>
         <button class="sample-btn" data-provider="mastodon"
-          data-url="https://mastodon.social/@Mastodon/109399976804498654">Mastodon</button>
+          data-url="https://mastodon.social/@Gargron/1">Mastodon</button>
         <button class="sample-btn" data-provider="threads"
           data-url="https://www.threads.net/@zuck/post/CuVGPmPSeZh" title="Requires Meta access token">Threads *</button>
         <button class="sample-btn" data-provider="reddit"
-          data-url="https://www.reddit.com/r/aww/comments/1k2jq8o/my_cat_likes_to_sit_like_this/">Reddit</button>
+          data-url="https://www.reddit.com/r/programming/comments/1h5lq2r/">Reddit</button>
         <button class="sample-btn" data-provider="pinterest"
-          data-url="https://www.pinterest.com/pin/709246641349109266/">Pinterest</button>
+          data-url="https://www.pinterest.com/pin/56787645305351792/">Pinterest</button>
       </div>
     </div>
 
@@ -392,13 +392,13 @@ export const html = `<!DOCTYPE html>
       <h3>Music</h3>
       <div class="samples">
         <button class="sample-btn" data-provider="spotify"
-          data-url="https://open.spotify.com/track/4PTG3Z6ehGkBFwjybzWkR8">Spotify Track</button>
+          data-url="https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT">Spotify Track</button>
         <button class="sample-btn" data-provider="spotify"
           data-url="https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M">Spotify Playlist</button>
         <button class="sample-btn" data-provider="spotify"
           data-url="https://open.spotify.com/album/1DFixLWuPkv3KT3TnV35m3">Spotify Album</button>
         <button class="sample-btn" data-provider="soundcloud"
-          data-url="https://soundcloud.com/foraboreal/sets/departure-to-everyday-life">SoundCloud</button>
+          data-url="https://soundcloud.com/theweeknd/blinding-lights">SoundCloud</button>
       </div>
     </div>
 
@@ -407,7 +407,7 @@ export const html = `<!DOCTYPE html>
       <h3>Photo</h3>
       <div class="samples">
         <button class="sample-btn" data-provider="flickr"
-          data-url="https://www.flickr.com/photos/bfranka/51853916612/">Flickr</button>
+          data-url="https://www.flickr.com/photos/bees/2341623661/">Flickr</button>
       </div>
     </div>
 
@@ -416,9 +416,9 @@ export const html = `<!DOCTYPE html>
       <h3>Presentation</h3>
       <div class="samples">
         <button class="sample-btn" data-provider="slideshare"
-          data-url="https://www.slideshare.net/dollykaushal3/upcoming-trends-in-digital-marketing-in-2024pptx">SlideShare</button>
+          data-url="https://www.slideshare.net/slideshow/culture-1798664/1798664">SlideShare</button>
         <button class="sample-btn" data-provider="speakerdeck"
-          data-url="https://speakerdeck.com/github/how-github-uses-github-to-build-github">Speaker Deck</button>
+          data-url="https://speakerdeck.com/hannesfritz/typedesign-prime-four">Speaker Deck</button>
       </div>
     </div>
 
@@ -427,9 +427,9 @@ export const html = `<!DOCTYPE html>
       <h3>AI / ML</h3>
       <div class="samples">
         <button class="sample-btn" data-provider="huggingface"
-          data-url="https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell">HF FLUX.1-schnell</button>
+          data-url="https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard">HF Open LLM Leaderboard</button>
         <button class="sample-btn" data-provider="gradio"
-          data-url="https://black-forest-labs-flux-1-schnell.hf.space">Gradio (HF Space)</button>
+          data-url="https://hf-audio-whisper-large-v3.hf.space/">Gradio (HF Space)</button>
       </div>
     </div>
 
@@ -438,7 +438,7 @@ export const html = `<!DOCTYPE html>
       <h3>Blog</h3>
       <div class="samples">
         <button class="sample-btn" data-provider="note"
-          data-url="https://note.com/and_and/n/n8a275c9e5da0">note</button>
+          data-url="https://note.com/beyond_times/n/n17aee4871bea">note</button>
       </div>
     </div>
 
