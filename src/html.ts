@@ -34,6 +34,7 @@ export const html = `<!DOCTYPE html>
       --c-bluesky: #0085ff;
       --c-flickr: #f40083;
       --c-threads: #ffffff;
+      --c-note: #41c9b4;
     }
 
     body {
@@ -138,6 +139,7 @@ export const html = `<!DOCTYPE html>
     .sample-btn[data-provider="bluesky"]    { border-color: color-mix(in srgb, var(--c-bluesky) 50%, transparent); color: var(--c-bluesky); }
     .sample-btn[data-provider="flickr"]     { border-color: color-mix(in srgb, var(--c-flickr) 50%, transparent); color: var(--c-flickr); }
     .sample-btn[data-provider="threads"]   { border-color: color-mix(in srgb, var(--c-threads) 50%, transparent); color: var(--c-threads); }
+    .sample-btn[data-provider="note"]      { border-color: color-mix(in srgb, var(--c-note) 50%, transparent); color: var(--c-note); }
 
     /* Divider */
     .divider {
@@ -367,6 +369,15 @@ export const html = `<!DOCTYPE html>
       </div>
     </div>
 
+    <!-- Blog -->
+    <div class="provider-group">
+      <h3>Blog</h3>
+      <div class="samples">
+        <button class="sample-btn" data-provider="note"
+          data-url="https://note.com/and_and/n/n8a275c9e5da0">note</button>
+      </div>
+    </div>
+
     <hr class="divider" />
 
     <div id="results" class="results">
@@ -508,7 +519,7 @@ export const html = `<!DOCTYPE html>
         soundcloud: '#ff5500', huggingface: '#ff9d00', gradio: '#f97316',
         slideshare: '#0077b5', speakerdeck: '#009287', pinterest: '#bd081c',
         reddit: '#ff4500', mastodon: '#6364ff', bluesky: '#0085ff',
-        flickr: '#f40083', threads: '#ffffff'
+        flickr: '#f40083', threads: '#ffffff', note: '#41c9b4'
       };
       return colors[name] || '#6366f1';
     }
